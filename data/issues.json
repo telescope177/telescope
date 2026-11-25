@@ -1,0 +1,6 @@
+[
+  { "id": "F-01", "kind": "文字纠错", "version": "v1", "anchors": ["typo"], "title": "第 1 段疑似错字「协凋」", "detail": "正文第 1 段「街道便民服务协凋工作」中，「协凋」不是规范用字。", "suggestion": "改为「协调」", "clause": null },
+  { "id": "F-02", "kind": "格式校验", "version": "v1", "anchors": ["sign"], "title": "DRAFT-01 v1 缺成文日期", "detail": "成文日期为本次检查的必要要素。当前稿件落款只有机关名称，文末落款区未填写成文日期。", "suggestion": null, "clause": null },
+  { "id": "F-03", "kind": "合规预审", "version": "v1", "anchors": ["cite", "time"], "title": "引用旧版", "detail": "当前稿件引用协同〔2025〕09号。该文已被现行文件废止。前稿报送时限为每月 15 日前，现行条款为每月 5 日前。", "suggestion": "改引协同〔2026〕07号", "clause": { "docId": "KB-003", "articleNo": 2, "also": [{ "docId": "KB-005", "articleNo": 2 }, { "docId": "KB-003", "articleNo": 4 }] } },
+  { "id": "F-04", "kind": "合规预审", "version": "v1", "anchors": ["scope"], "title": "报送范围过宽", "detail": "当前稿件写「全市各部门及社会单位」。现行文件适用范围为本级各街道便民服务中心，前稿才是「全市各部门」。", "suggestion": "收窄为本级各街道便民服务中心", "clause": { "docId": "KB-003", "articleNo": 2, "also": [{ "docId": "KB-005", "articleNo": 2 }] } }
+]

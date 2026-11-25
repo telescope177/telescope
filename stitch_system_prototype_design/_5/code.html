@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono,+tabular-nums,+monospace:wght@100..900&family=Source+Sans+3,+PingFang+SC,+Microsoft+YaHei,+sans-serif:wght@100..900&family=Source+Sans+3,+PingFang+SC,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ba1a1a","surface-container-highest":"#d5e3fc","on-primary-fixed-variant":"#264872","surface-container-high":"#dce9ff","surface-variant":"#d5e3fc","on-error-container":"#93000a","surface-dim":"#ccdbf3","inverse-primary":"#a8c8fa","on-tertiary-fixed-variant":"#173bab","on-secondary-fixed":"#410005","inverse-surface":"#233144","tertiary":"#001658","on-primary":"#ffffff","on-secondary-container":"#65000c","on-primary-fixed":"#001c3a","on-secondary":"#ffffff","surface-tint":"#40608b","background":"#f8f9ff","surface-container":"#e6eeff","secondary-fixed":"#ffdad7","on-tertiary":"#ffffff","primary-fixed-dim":"#a8c8fa","tertiary-fixed":"#dde1ff","on-background":"#0d1c2e","secondary-fixed-dim":"#ffb3af","on-surface":"#0d1c2e","primary-fixed":"#d4e3ff","outline":"#73777f","error-container":"#ffdad6","surface-container-low":"#eff4ff","tertiary-container":"#002789","outline-variant":"#c3c6d0","on-tertiary-container":"#7a94ff","on-surface-variant":"#43474e","secondary-container":"#fd6260","surface-bright":"#f8f9ff","on-primary-container":"#7d9ccb","primary":"#001e3d","on-tertiary-fixed":"#001453","on-error":"#ffffff","tertiary-fixed-dim":"#b8c4ff","secondary":"#b12b2f","on-secondary-fixed-variant":"#8f0f1a","primary-container":"#0c335c","surface":"#f8f9ff","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","space-xl":"2rem","margin":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","gutter":"1rem","gutter-desktop":"1.5rem","space-md":"1rem","space-xs":"0.25rem"},fontFamily:{"headline-lg":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"body-lg":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"label-caps":["\"Source Sans 3, PingFang SC, sans-serif\""],"label-numeric-md":["\"JetBrains Mono, tabular-nums, monospace\""],"label-numeric-lg":["\"JetBrains Mono, tabular-nums, monospace\""],"label-numeric-sm":["\"JetBrains Mono, tabular-nums, monospace\""],"body-sm":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-md":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"body-md":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-xl":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-xl-mobile":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""]},fontSize:{"headline-lg":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-caps":["12px",{lineHeight:"16px",fontWeight:"600"}],"label-numeric-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-numeric-lg":["32px",{lineHeight:"36px",fontWeight:"700"}],"label-numeric-sm":["13px",{lineHeight:"16px",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["30px",{lineHeight:"38px",fontWeight:"700"}],"headline-xl-mobile":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-14 bg-primary text-on-primary z-50 shadow-[0_1px_8px_rgba(0,0,0,0.08)] flex items-center justify-between px-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">account_balance</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight font-semibold text-on-primary">演示市政务智辅平台</span><span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-caps text-label-caps">便民服务数据报送</span></div><span class="font-body-sm text-body-sm text-surface-dim font-label-numeric-sm">基线标准版本: 2026-11-19 · 街道级示范应用</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-primary-container/80 p-0.5 rounded-lg"><span class="font-body-sm text-body-sm text-surface-container-high px-space-xs">当前身份角色</span><div class="flex items-center gap-0.5"><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps bg-surface-container-lowest text-primary shadow-[0_1px_2px_rgba(0,0,0,0.06)]" type="button">资料管理员</button><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps text-surface-container-high hover:text-on-primary transition-colors" type="button">撰稿员</button><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps text-surface-container-high hover:text-on-primary transition-colors" type="button">审核员</button></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary/20 text-secondary-fixed"><span class="material-symbols-outlined text-[16px]">info</span><span class="font-body-sm text-body-sm">验收匹配: 资料入库流转中</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-surface-container-highest px-space-sm py-1 rounded-DEFAULT bg-primary-container"><span class="material-symbols-outlined text-[16px]">event</span><span>2026-11-19</span></div><button class="flex items-center gap-space-xs px-space-sm py-1 rounded-DEFAULT bg-primary-container text-surface-container-high hover:bg-surface-container-highest hover:text-on-surface transition-colors font-body-sm text-body-sm" title="重置演示会话(S-07)" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span class="hidden lg:inline">重置会话 (S-07)</span></button><button class="w-8 h-8 rounded-DEFAULT bg-primary-container text-surface-container-high hover:text-on-primary flex items-center justify-center transition-colors" title="帮助与说明" type="button"><span class="material-symbols-outlined text-[18px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-14 bottom-0 w-64 bg-surface-container-low z-40 flex flex-col justify-between p-space-sm shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">业务协作工作台</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.06)]"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">总览</span></div><span class="font-label-numeric-sm text-label-numeric-sm text-outline">01</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="intake" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">move_to_inbox</span><span class="font-body-md text-body-md">资料归集</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">资料员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="search" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-body-md text-body-md">依据检索</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="draft" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-body-md text-body-md">文稿预审</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.06)]" data-path="review" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">approval_delegation</span><span class="font-body-md text-body-md">审核办理</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">审核员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="analysis" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">办件分析</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a></nav></div><div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-[18px] text-primary">verified_user</span><span class="font-label-caps text-label-caps font-semibold">街道数据质检引擎</span></div><div class="flex justify-between items-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm"><span>规则库版本:</span><span>v3.4.2</span></div><div class="flex justify-between items-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm"><span>验证链路:</span><span class="text-secondary font-semibold">12项核验项就绪</span></div></div></aside><div class="pl-64"><main class="w-full pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- 顶部工作台标题与审批进度流 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-primary">审核办理工作台</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">审核员</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps font-label-numeric-sm">TASK-AUDIT-2026</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">基于节点检查快照与防重复机制的合规审批 · 严守市政务公文校核基线规范</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-DEFAULT bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">fact_check</span>
+<span class="font-body-sm text-body-sm">检查复用标准:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">DOC-04</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-DEFAULT bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span class="font-body-sm text-body-sm">退回留痕标准:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold">DOC-05</span>
+</div>
+</div>
+</div>
+<!-- 节点审批流程追踪 -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">公文流转状态</span>
+<span class="text-on-surface-variant">/</span>
+<span class="font-body-sm text-body-sm text-on-surface">《关于开展2026年度第四季度街道便民服务网点基础数据报送的通知》</span>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-numeric-sm text-label-numeric-sm">✓</span>
+<span class="font-body-sm text-body-sm font-semibold text-primary">拟稿预审</span>
+<span class="font-label-caps text-label-caps text-primary px-1.5 py-0.2 bg-primary-container/20 rounded">已通过</span>
+</div>
+<div class="w-8 h-0.5 bg-outline-variant"></div>
+<!-- Step 2 (Current) -->
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-numeric-sm text-label-numeric-sm animate-pulse">2</div>
+<span class="font-body-sm text-body-sm font-semibold text-secondary">审核办理</span>
+<span class="font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed-variant px-1.5 py-0.2 rounded font-bold">当前节点</span>
+</div>
+<div class="w-8 h-0.5 bg-outline-variant"></div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-xs opacity-50">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-numeric-sm text-label-numeric-sm">3</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">签发归档</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 主界面：左侧 OA 任务列表 (4列) + 右侧核查及办理区 (8列) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- 左侧 OA 任务与版本快照 -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">inbox</span>
+<span class="font-headline-md text-headline-md text-primary">OA 审核任务队列</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">共 4 条任务快照</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">防重复机制运行中：相同哈希自动复用检查结果</span>
+</div>
+<!-- 任务卡片列表 -->
+<div class="flex flex-col gap-space-sm" id="taskListContainer">
+<!-- OA-001 -->
+<div class="task-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm" id="task-OA-001" onclick="selectTask('OA-001')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">OA-001</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">DRAFT-01 v1</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-on-primary-fixed-variant font-label-caps text-label-caps font-semibold">待审核</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface line-clamp-1">初次送审：街道便民服务网点基础数据通告</div>
+<div class="p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm flex items-center justify-between">
+<span>调用算法: 同一 inspect 引擎</span>
+<span class="text-secondary font-label-numeric-sm text-label-numeric-sm font-semibold">4 条风险检出 (F-01~04)</span>
+</div>
+</div>
+<!-- OA-002 -->
+<div class="task-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm" id="task-OA-002" onclick="selectTask('OA-002')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">OA-002</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">DRAFT-01 v1 重复提交</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-primary font-label-caps text-label-caps font-semibold">待复用</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface line-clamp-1">系统防重复机制演示：模拟二次提交相同稿本</div>
+<!-- 高亮提示条 DOC-04 -->
+<div class="p-space-sm rounded-lg bg-primary-container text-on-primary flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-surface-container-highest">cached</span>
+<span class="font-label-caps text-label-caps font-semibold text-surface-container-highest">系统提示：已复用 v1 检查结果</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-primary">
+                未重新计算，复用 4 项问题清单（<strong class="underline decoration-secondary">DOC-04 验收通过</strong>）
+              </div>
+</div>
+</div>
+<!-- OA-003 (聚焦) -->
+<div class="task-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-md transition-all flex flex-col gap-space-sm bg-surface-container-low" id="task-OA-003" onclick="selectTask('OA-003')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-secondary">OA-003</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps font-bold">聚焦查看</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps font-semibold">待退回处理</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">DRAFT-01 v1 审核退回处理</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">包含审查结果核对、原文定位链接、必填退回意见框与退回操作按钮</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-numeric-sm text-label-numeric-sm pt-space-xs">
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>4项违规待复核
+              </span>
+<span>快照: SNAP-20261119-01</span>
+</div>
+</div>
+<!-- OA-004 -->
+<div class="task-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm" id="task-OA-004" onclick="selectTask('OA-004')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">OA-004</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">DRAFT-01 v2 终稿</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">待人工复核</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface line-clamp-1">修正版复审申报：各街道办事处便民服务数据报送</div>
+<div class="p-space-xs rounded bg-surface-container-low text-on-surface flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">历史检查结果:</span>
+<span class="text-primary font-label-numeric-sm text-label-numeric-sm font-bold">0 条（问题清零）</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-highest hover:bg-surface-container-high text-primary font-body-sm text-body-sm flex items-center gap-1 transition-colors" onclick="event.stopPropagation(); triggerInspectZero();" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>发起检查计算</span>
+</button>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant" id="inspectCalcStatus">点击发起二次演算</span>
+</div>
+</div>
+</div>
+<!-- 审核规则引擎环境指示 -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-xs text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps font-semibold">公文快照只读留痕机制保障</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            依据公文审批规则，在“退回重报”或“复核通过”动作发生时，将锁定当前比对哈希并永久写入电子档案存根，杜绝事后篡改与结果漂移。
+          </p>
+</div>
+</div>
+<!-- 右侧主工作区 (8列) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- 上半部分：公文快照与问题定位面板 (复用 DRAFT-01 v1 快照) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-primary">公文审查快照对照面板</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary text-on-primary font-label-numeric-sm text-label-numeric-sm font-semibold">SNAP-20261119-01 (v1)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">对应待办任务 OA-003 · 检出 4 项阻断与风险问题</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center gap-1 transition-colors" onclick="focusAllIssues()" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>逐条定位并高亮</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center gap-1 transition-colors" onclick="toggleSnapshotMode()" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+<span>切换并排视图</span>
+</button>
+</div>
+</div>
+<!-- 分栏：左侧原文快照内容，右侧问题检查列表 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- 原文只读公文纸 -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-sm min-h-[380px] text-on-surface">
+<div class="flex items-center justify-between pb-space-xs text-on-surface-variant font-label-caps text-label-caps">
+<span>[公文正文快照存根]</span>
+<span class="font-label-numeric-sm text-label-numeric-sm">字数: 384 字</span>
+</div>
+<!-- 公文标题与正文段落 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm font-body-md text-body-md leading-relaxed text-on-surface">
+<div class="text-center font-bold text-headline-md font-headline-md text-primary py-space-xs">
+                  关于开展2026年度第四季度街道便民服务网点基础数据报送的通知
+                </div>
+<div class="text-on-surface-variant text-body-sm font-body-sm">
+                  各街道办事处、直属各综合服务中心：
+                </div>
+<div class="text-indent-2">
+                  为深入贯彻落实街道便民利民惠民举措，现就四季度便民网点运行数据报送工作通告如下：
+                </div>
+<div class="text-indent-2" id="doc-para-1">
+                  一、严格按照
+                  <span class="bg-secondary/20 text-secondary font-semibold px-1 rounded transition-all" id="mark-F03">
+                    《便民数据汇聚暂行办法》（演示协同〔2022〕19号）
+                  </span>
+                  要求执行报送。各单位应加强统筹
+                  <span class="bg-secondary/20 text-secondary font-bold underline px-1 rounded transition-all" id="mark-F01">
+                    协凋
+                  </span>
+                  ，明确专人负责。
+                </div>
+<div class="text-indent-2" id="doc-para-2">
+                  二、报送范围除常规便民网点日常开闭时间、服务事项清单外，
+                  <span class="bg-secondary/20 text-secondary font-semibold px-1 rounded transition-all" id="mark-F04">
+                    需一并抄报各辖区企业全年涉税明细与核心财务报表
+                  </span>
+                  ，以备市级数据融合调优。
+                </div>
+<div class="text-indent-2">
+                  三、请各街道于本周五前完成数据接口对接工作。
+                </div>
+<div class="pt-space-md flex flex-col items-end gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<div>演示市人民政府街道便民服务协同办公室</div>
+<div class="bg-secondary/20 text-secondary px-2 py-0.5 rounded font-label-numeric-sm text-label-numeric-sm font-bold transition-all" id="mark-F02">
+                    〔成文日期未填写〕
+                  </div>
+</div>
+</div>
+</div>
+<!-- 右侧：问题核对与依据对照清单 -->
+<div class="lg:col-span-5 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-headline-md text-headline-md text-primary">核检出 4 项问题清单</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps font-bold">100% 覆盖</span>
+</div>
+<!-- F-01 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col gap-space-xs hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-numeric-sm text-[11px] font-bold">F1</span>
+<span class="font-body-md text-body-md font-semibold text-secondary">错别字核验阻断</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">文字规范</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface">正文第一条检出错字「<span class="text-secondary font-bold">协凋</span>」，建议更正为「协调」。</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm">
+<button class="text-primary hover:underline flex items-center gap-0.5 font-label-numeric-sm text-label-numeric-sm" onclick="locateIssue('mark-F01')" type="button">
+<span class="material-symbols-outlined text-[15px]">my_location</span>定位原文
+                  </button>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-0.5 font-body-sm text-body-sm" onclick="showBasisModal('F-01', '《国家行政机关公文处理办法》第25条及市政务审校通用词典表')" type="button">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>查看依据对照表
+                  </button>
+</div>
+</div>
+<!-- F-02 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col gap-space-xs hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-numeric-sm text-[11px] font-bold">F2</span>
+<span class="font-body-md text-body-md font-semibold text-secondary">成文日期缺失</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">要素完整性</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface">落款处成文日期为空，不符合正式公文办件归档标准。</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm">
+<button class="text-primary hover:underline flex items-center gap-0.5 font-label-numeric-sm text-label-numeric-sm" onclick="locateIssue('mark-F02')" type="button">
+<span class="material-symbols-outlined text-[15px]">my_location</span>定位原文
+                  </button>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-0.5 font-body-sm text-body-sm" onclick="showBasisModal('F-02', '《党政机关公文格式》（GB/T 9704-2012）第7.3.5.4条 成文日期规则')" type="button">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>查看依据对照表
+                  </button>
+</div>
+</div>
+<!-- F-03 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col gap-space-xs hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-numeric-sm text-[11px] font-bold">F3</span>
+<span class="font-body-md text-body-md font-semibold text-secondary">废止旧文引用</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">政策基线</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface">引用了已废止的〔2022〕19号文，应采用现行〔2026〕07号文。</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm">
+<button class="text-primary hover:underline flex items-center gap-0.5 font-label-numeric-sm text-label-numeric-sm" onclick="locateIssue('mark-F03')" type="button">
+<span class="material-symbols-outlined text-[15px]">my_location</span>定位原文
+                  </button>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-0.5 font-body-sm text-body-sm" onclick="showBasisModal('F-03', '《演示市街道便民服务数据报送规范》（演示协同〔2026〕07号）废止前序规范条款')" type="button">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>查看依据对照表
+                  </button>
+</div>
+</div>
+<!-- F-04 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col gap-space-xs hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-numeric-sm text-[11px] font-bold">F4</span>
+<span class="font-body-md text-body-md font-semibold text-secondary">报送范围超纲</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">合规边界</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface">街道便民数据采集越权要求调取企业财务核心税表，违反权责清单。</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm">
+<button class="text-primary hover:underline flex items-center gap-0.5 font-label-numeric-sm text-label-numeric-sm" onclick="locateIssue('mark-F04')" type="button">
+<span class="material-symbols-outlined text-[15px]">my_location</span>定位原文
+                  </button>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-0.5 font-body-sm text-body-sm" onclick="showBasisModal('F-04', '《演示市基层便民事项负面清单与数源归集保护条例》第11条')" type="button">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>查看依据对照表
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 下半部分：【审核办理与流转操作区】 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-primary">审核办理与流转审批决策</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary/10 text-secondary font-label-caps text-label-caps font-bold">DOC-05 退回留痕强制验收</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">请审核员录入审批意见，退回操作将生成永久不可逆审核存根</span>
+</div>
+</div>
+<!-- 操作选项 Tab -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1.5 rounded-DEFAULT font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-secondary shadow-sm transition-all flex items-center gap-1" id="tab-reject" onclick="switchAction('reject')" type="button">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>退回修改（主流程）</span>
+</button>
+<button class="px-space-md py-1.5 rounded-DEFAULT font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1" id="tab-pass" onclick="switchAction('pass')" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>复核通过（仅限0风险）</span>
+</button>
+</div>
+</div>
+<!-- 退回意见输入框 (带必填红星标识，DOC-05 验收点) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-space-xs font-headline-md text-headline-md text-primary" for="returnComments">
+<span class="text-secondary font-bold text-headline-lg font-headline-lg leading-none">*</span>
+<span>审核退回意见（必填存证字段 · DOC-05 验收核对）</span>
+</label>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">字数统计: <span class="font-bold text-primary" id="charCount">82</span> / 500</span>
+</div>
+<div class="relative">
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none transition-all resize-y" id="returnComments" oninput="updateCharCount(this)" rows="4">请按最新《演示市街道便民服务数据报送规范》（演示协同〔2026〕07号）第2条修改报送时限与范围，补齐成文日期，订正正文错别字后再报。</textarea>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant px-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+<span>退回原因须具体关联对应依据编号与修改指导，避免公文往复流转滞留。</span>
+</div>
+<button class="text-primary hover:underline font-label-caps text-label-caps" onclick="pasteTemplate()" type="button">使用预设公文退回规范模板</button>
+</div>
+</div>
+<!-- 操作按钮栏 -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span>当前处理稿件: DRAFT-01 v1</span>
+<span>•</span>
+<span>快照对应: SNAP-20261119-01</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" onclick="cancelAction()" type="button">
+                暂存待议
+              </button>
+<!-- 红色退回主按钮 (DOC-05) -->
+<button class="px-space-lg py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 transition-all font-body-md text-body-md font-semibold flex items-center gap-space-xs shadow-md" id="btnRejectAction" onclick="submitRejectTrace()" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_return</span>
+<span>退回修改并记录留痕</span>
+</button>
+<!-- 蓝色复核通过按钮 -->
+<button class="px-space-lg py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary-container/90 transition-all font-body-md text-body-md font-semibold flex items-center gap-space-xs shadow-md" id="btnPassAction" onclick="submitPassAudit()" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>通过人工复核</span>
+</button>
+</div>
+</div>
+<!-- 历史审核留痕时间轴 (Audit Log Timeline) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-md mt-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">timeline</span>
+<span class="font-headline-md text-headline-md text-primary">历史审核留痕时间轴 (Audit Log Records)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-numeric-sm text-label-numeric-sm font-semibold">
+                电子档案区块链防篡改链条已锚定
+              </span>
+</div>
+<!-- 时间轴条目容器 -->
+<div class="flex flex-col gap-space-md" id="auditTimelineContainer">
+<!-- 留痕条目 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs text-body-sm font-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps font-bold">退回重报</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">[2026-11-19 09:15]</span>
+<span class="text-on-surface font-semibold">审核员</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+<span>稿件: <strong class="text-primary font-bold">DRAFT-01 v1</strong></span>
+<span>|</span>
+<span>快照ID: <strong class="text-on-surface font-mono">SNAP-20261119-01</strong></span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low text-on-surface font-body-md text-body-md">
+<span class="font-semibold text-secondary">审核意见：</span>“请按最新文号07号修改并补充日期”
+                </div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5 font-label-numeric-sm text-label-numeric-sm">
+<span class="text-secondary font-semibold">历史检查结果：4项风险进入归档留痕 (错别字 / 缺日期 / 废旧文 / 超纲报送)</span>
+<span class="text-outline">存证哈希: 0x9f1d24c...b23</span>
+</div>
+</div>
+<!-- 留痕条目 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs text-body-sm font-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-container text-on-primary font-label-caps text-label-caps font-bold">复核留痕</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">[2026-11-19 11:20]</span>
+<span class="text-on-surface font-semibold">审核员</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+<span>稿件: <strong class="text-primary font-bold">DRAFT-01 v2</strong></span>
+<span>|</span>
+<span>快照ID: <strong class="text-on-surface font-mono">SNAP-20261119-02</strong></span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low text-on-surface font-body-md text-body-md">
+<span class="font-semibold text-primary">流转动作：</span>拟稿人重提修正稿，系统检查问题已清零，状态保持「<strong class="text-secondary">待人工复核</strong>」
+                </div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5 font-label-numeric-sm text-label-numeric-sm">
+<span class="text-primary font-semibold">历史检查结果：0项风险（校验通过）</span>
+<span class="text-outline">存证哈希: 0x0c335ce...e84</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 动态弹窗：查看依据对照表 Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="basisModal">
+<div class="bg-surface-container-lowest max-w-xl w-full rounded-xl shadow-2xl p-space-lg flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<span class="font-headline-md text-headline-md font-bold" id="modalIssueCode">依据法规对照</span>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="closeBasisModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-lg">
+<span class="font-label-caps text-label-caps text-on-surface-variant">合规标准依据条款：</span>
+<div class="font-body-md text-body-md text-on-surface font-semibold leading-relaxed" id="modalBasisText">
+          -
+        </div>
+</div>
+<div class="flex flex-col gap-space-xs text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span>审查判定结论：</span>
+</div>
+<p class="pl-space-sm">该项属于市政务协同平台一级阻断项，必须由初拟人纠正后方可允许签发。</p>
+</div>
+<div class="flex justify-end pt-space-xs">
+<button class="px-space-lg py-2 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-semibold" onclick="closeBasisModal()" type="button">
+          已知悉并关闭
+        </button>
+</div>
+</div>
+</div>
+<!-- 提示 Toast 通知栏 -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-space-sm px-space-md py-space-sm rounded-lg shadow-xl text-on-primary font-body-md text-body-md transition-all duration-200" id="toastNotification">
+<span class="material-symbols-outlined text-[20px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">操作执行成功</span>
+</div>
+</div>
+<script>
+  // 切换 OA 任务卡片聚焦
+  function selectTask(taskId) {
+    document.querySelectorAll('.task-card').forEach(el => {
+      el.classList.remove('bg-surface-container-low', 'shadow-md');
+      el.classList.add('bg-surface-container-lowest', 'shadow-sm');
+    });
+
+    const activeEl = document.getElementById('task-' + taskId);
+    if (activeEl) {
+      activeEl.classList.remove('bg-surface-container-lowest', 'shadow-sm');
+      activeEl.classList.add('bg-surface-container-low', 'shadow-md');
+    }
+
+    if (taskId === 'OA-002') {
+      showToast('已激活 OA-002: 复用 DRAFT-01 v1 快照（DOC-04 机制已命中，免二次演算）', 'bg-primary-container text-on-primary', 'cached');
+    } else if (taskId === 'OA-004') {
+      showToast('已查看 OA-004: DRAFT-01 v2 终稿，状态「待人工复核」，历史检查结果 0 条', 'bg-primary text-on-primary', 'info');
+    } else {
+      showToast('已切换至任务 ' + taskId + ' 进行快照审查核验', 'bg-primary text-on-primary', 'fact_check');
+    }
+  }
+
+  // 针对 OA-004 发起检查计算 (清零演示)
+  function triggerInspectZero() {
+    const statusEl = document.getElementById('inspectCalcStatus');
+    statusEl.innerHTML = '<span class="text-secondary animate-pulse">正在重新运行规则引擎...</span>';
+    setTimeout(() => {
+      statusEl.innerHTML = '<span class="text-primary font-bold">计算结果：0 条风险（清零）</span>';
+      showToast('【OA-004 检查完成】算法计算依然为 0 条问题，主状态保持「待人工复核」', 'bg-primary text-on-primary', 'verified');
+    }, 600);
+  }
+
+  // 原文问题高亮与定位
+  function locateIssue(markId) {
+    const target = document.getElementById(markId);
+    if (!target) return;
+    
+    // 清除其他临时闪烁
+    document.querySelectorAll('[id^="mark-F"]').forEach(el => {
+      el.classList.remove('scale-105', 'bg-secondary', 'text-on-secondary');
+      el.classList.add('bg-secondary/20', 'text-secondary');
+    });
+
+    // 聚焦动画
+    target.classList.remove('bg-secondary/20', 'text-secondary');
+    target.classList.add('scale-105', 'bg-secondary', 'text-on-secondary');
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    showToast('已精准锚定公文原文对应违规段落', 'bg-surface-container-highest text-primary', 'my_location');
+  }
+
+  function focusAllIssues() {
+    ['mark-F01', 'mark-F02', 'mark-F03', 'mark-F04'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add('ring-2', 'ring-secondary');
+        setTimeout(() => el.classList.remove('ring-2', 'ring-secondary'), 2500);
+      }
+    });
+    showToast('已全景高亮正文中 4 处核查不符项', 'bg-primary text-on-primary', 'highlight');
+  }
+
+  function toggleSnapshotMode() {
+    showToast('公文并排核验模式已切换', 'bg-surface-container-high text-on-surface', 'swap_horiz');
+  }
+
+  // 依据对照弹窗
+  function showBasisModal(code, basisText) {
+    document.getElementById('modalIssueCode').innerText = '审查依据对照 - ' + code;
+    document.getElementById('modalBasisText').innerText = basisText;
+    const modal = document.getElementById('basisModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeBasisModal() {
+    const modal = document.getElementById('basisModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  // 审核动作切换
+  function switchAction(type) {
+    const tabReject = document.getElementById('tab-reject');
+    const tabPass = document.getElementById('tab-pass');
+    const btnReject = document.getElementById('btnRejectAction');
+    const btnPass = document.getElementById('btnPassAction');
+
+    if (type === 'reject') {
+      tabReject.className = 'px-space-md py-1.5 rounded-DEFAULT font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-secondary shadow-sm transition-all flex items-center gap-1';
+      tabPass.className = 'px-space-md py-1.5 rounded-DEFAULT font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1';
+      btnReject.classList.remove('opacity-40');
+      btnPass.classList.add('opacity-40');
+    } else {
+      tabPass.className = 'px-space-md py-1.5 rounded-DEFAULT font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center gap-1';
+      tabReject.className = 'px-space-md py-1.5 rounded-DEFAULT font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1';
+      btnReject.classList.add('opacity-40');
+      btnPass.classList.remove('opacity-40');
+      showToast('当前快照存在 4 项风险，无法直接通过，需完成人工确认或退回修改', 'bg-secondary text-on-secondary', 'warning');
+    }
+  }
+
+  // 意见框字数
+  function updateCharCount(textarea) {
+    document.getElementById('charCount').innerText = textarea.value.trim().length;
+  }
+
+  function pasteTemplate() {
+    const txt = "请按最新《演示市街道便民服务数据报送规范》（演示协同〔2026〕07号）第2条修改报送时限与范围，补齐成文日期，订正正文错别字后再报。";
+    const area = document.getElementById('returnComments');
+    area.value = txt;
+    updateCharCount(area);
+    showToast('已填入标准政务退回建议意见', 'bg-surface-container-high text-primary', 'content_paste');
+  }
+
+  // DOC-05 验收提交退回留痕
+  function submitRejectTrace() {
+    const comments = document.getElementById('returnComments').value.trim();
+    if (!comments) {
+      alert('退回意见属于必填存证字段（DOC-05），请输入退回原因！');
+      return;
+    }
+
+    const now = new Date();
+    const timeStr = now.getFullYear() + '-' + 
+                    String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+                    String(now.getDate()).padStart(2, '0') + ' ' + 
+                    String(now.getHours()).padStart(2, '0') + ':' + 
+                    String(now.getMinutes()).padStart(2, '0');
+
+    const timeline = document.getElementById('auditTimelineContainer');
+    const newEntry = document.createElement('div');
+    newEntry.className = 'bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs border-l-4 border-secondary animate-in fade-in slide-in-from-top-2 duration-300';
+    newEntry.innerHTML = `
+      <div class="flex flex-wrap items-center justify-between gap-space-xs text-body-sm font-body-sm">
+        <div class="flex items-center gap-space-sm">
+          <span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps font-bold">退回重报 (本次即时留痕)</span>
+          <span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">[${timeStr}]</span>
+          <span class="text-on-surface font-semibold">审核员</span>
+        </div>
+        <div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+          <span>稿件: <strong class="text-primary font-bold">DRAFT-01 v1</strong></span>
+          <span>|</span>
+          <span>快照ID: <strong class="text-on-surface font-mono">SNAP-20261119-03</strong></span>
+        </div>
+      </div>
+      <div class="p-space-xs rounded bg-surface-container-low text-on-surface font-body-md text-body-md">
+        <span class="font-semibold text-secondary">审核意见：</span>“${comments}”
+      </div>
+      <div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5 font-label-numeric-sm text-label-numeric-sm">
+        <span class="text-secondary font-semibold">历史检查结果：4项风险进入归档留痕 (DOC-05 验收通过)</span>
+        <span class="text-outline">存证哈希: 0x${Math.random().toString(16).substr(2, 8)}...${Math.random().toString(16).substr(2, 3)}</span>
+      </div>
+    `;
+
+    timeline.insertBefore(newEntry, timeline.firstChild);
+    showToast('【DOC-05 退回留痕成功】办件已退回拟稿人，存根已归档入链！', 'bg-secondary text-on-secondary', 'assignment_turned_in');
+  }
+
+  function submitPassAudit() {
+    showToast('提示：DRAFT-01 v1 仍包含4项未纠正阻断项，无法直接签批。请核对OA-004终稿。', 'bg-secondary text-on-secondary', 'cancel');
+  }
+
+  function cancelAction() {
+    showToast('当前审批草稿与审查标记已暂存', 'bg-surface-container-high text-on-surface', 'save');
+  }
+
+  function showToast(msg, colorClass, iconName) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+    toast.className = `fixed bottom-6 right-6 z-50 flex items-center gap-space-sm px-space-md py-space-sm rounded-lg shadow-xl font-body-md text-body-md transition-all duration-200 ${colorClass}`;
+    toastMsg.innerText = msg;
+    toastIcon.innerText = iconName || 'info';
+
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3800);
+  }
+</script></main></div></body></html>

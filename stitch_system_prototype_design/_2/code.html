@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono,+tabular-nums,+monospace:wght@100..900&family=Source+Sans+3,+PingFang+SC,+Microsoft+YaHei,+sans-serif:wght@100..900&family=Source+Sans+3,+PingFang+SC,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ba1a1a","surface-container-highest":"#d5e3fc","on-primary-fixed-variant":"#264872","surface-container-high":"#dce9ff","surface-variant":"#d5e3fc","on-error-container":"#93000a","surface-dim":"#ccdbf3","inverse-primary":"#a8c8fa","on-tertiary-fixed-variant":"#173bab","on-secondary-fixed":"#410005","inverse-surface":"#233144","tertiary":"#001658","on-primary":"#ffffff","on-secondary-container":"#65000c","on-primary-fixed":"#001c3a","on-secondary":"#ffffff","surface-tint":"#40608b","background":"#f8f9ff","surface-container":"#e6eeff","secondary-fixed":"#ffdad7","on-tertiary":"#ffffff","primary-fixed-dim":"#a8c8fa","tertiary-fixed":"#dde1ff","on-background":"#0d1c2e","secondary-fixed-dim":"#ffb3af","on-surface":"#0d1c2e","primary-fixed":"#d4e3ff","outline":"#73777f","error-container":"#ffdad6","surface-container-low":"#eff4ff","tertiary-container":"#002789","outline-variant":"#c3c6d0","on-tertiary-container":"#7a94ff","on-surface-variant":"#43474e","secondary-container":"#fd6260","surface-bright":"#f8f9ff","on-primary-container":"#7d9ccb","primary":"#001e3d","on-tertiary-fixed":"#001453","on-error":"#ffffff","tertiary-fixed-dim":"#b8c4ff","secondary":"#b12b2f","on-secondary-fixed-variant":"#8f0f1a","primary-container":"#0c335c","surface":"#f8f9ff","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","space-xl":"2rem","margin":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","gutter":"1rem","gutter-desktop":"1.5rem","space-md":"1rem","space-xs":"0.25rem"},fontFamily:{"headline-lg":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"body-lg":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"label-caps":["\"Source Sans 3, PingFang SC, sans-serif\""],"label-numeric-md":["\"JetBrains Mono, tabular-nums, monospace\""],"label-numeric-lg":["\"JetBrains Mono, tabular-nums, monospace\""],"label-numeric-sm":["\"JetBrains Mono, tabular-nums, monospace\""],"body-sm":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-md":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"body-md":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-xl":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-xl-mobile":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""]},fontSize:{"headline-lg":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-caps":["12px",{lineHeight:"16px",fontWeight:"600"}],"label-numeric-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-numeric-lg":["32px",{lineHeight:"36px",fontWeight:"700"}],"label-numeric-sm":["13px",{lineHeight:"16px",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["30px",{lineHeight:"38px",fontWeight:"700"}],"headline-xl-mobile":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-14 bg-primary text-on-primary z-50 shadow-[0_1px_8px_rgba(0,0,0,0.08)] flex items-center justify-between px-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">account_balance</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight font-semibold text-on-primary">演示市政务智辅平台</span><span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-caps text-label-caps">便民服务数据报送</span></div><span class="font-body-sm text-body-sm text-surface-dim font-label-numeric-sm">基线标准版本: 2026-11-19 · 街道级示范应用</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-primary-container/80 p-0.5 rounded-lg"><span class="font-body-sm text-body-sm text-surface-container-high px-space-xs">当前身份角色</span><div class="flex items-center gap-0.5"><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps bg-surface-container-lowest text-primary shadow-[0_1px_2px_rgba(0,0,0,0.06)]" type="button">资料管理员</button><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps text-surface-container-high hover:text-on-primary transition-colors" type="button">撰稿员</button><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps text-surface-container-high hover:text-on-primary transition-colors" type="button">审核员</button></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary/20 text-secondary-fixed"><span class="material-symbols-outlined text-[16px]">info</span><span class="font-body-sm text-body-sm">验收匹配: 资料入库流转中</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-surface-container-highest px-space-sm py-1 rounded-DEFAULT bg-primary-container"><span class="material-symbols-outlined text-[16px]">event</span><span>2026-11-19</span></div><button class="flex items-center gap-space-xs px-space-sm py-1 rounded-DEFAULT bg-primary-container text-surface-container-high hover:bg-surface-container-highest hover:text-on-surface transition-colors font-body-sm text-body-sm" title="重置演示会话(S-07)" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span class="hidden lg:inline">重置会话 (S-07)</span></button><button class="w-8 h-8 rounded-DEFAULT bg-primary-container text-surface-container-high hover:text-on-primary flex items-center justify-center transition-colors" title="帮助与说明" type="button"><span class="material-symbols-outlined text-[18px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-14 bottom-0 w-64 bg-surface-container-low z-40 flex flex-col justify-between p-space-sm shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">业务协作工作台</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.06)]"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">总览</span></div><span class="font-label-numeric-sm text-label-numeric-sm text-outline">01</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="intake" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">move_to_inbox</span><span class="font-body-md text-body-md">资料归集</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">资料员</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.06)]" data-path="search" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-body-md text-body-md">依据检索</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="draft" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-body-md text-body-md">文稿预审</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="review" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">approval_delegation</span><span class="font-body-md text-body-md">审核办理</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">审核员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="analysis" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">办件分析</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a></nav></div><div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-[18px] text-primary">verified_user</span><span class="font-label-caps text-label-caps font-semibold">街道数据质检引擎</span></div><div class="flex justify-between items-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm"><span>规则库版本:</span><span>v3.4.2</span></div><div class="flex justify-between items-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm"><span>验证链路:</span><span class="text-secondary font-semibold">12项核验项就绪</span></div></div></aside><div class="pl-64"><main class="w-full pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Context Header -->
+<div class="bg-surface-container-lowest px-space-lg py-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">manage_search</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface">依据检索工作台</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps font-semibold">角色：撰稿员</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">工作台编号: SRCH-2026-N1</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">面向法定制度与政策公文的查核支撑中心 · 智能双模式检索引擎</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">内部验收项就绪</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-semibold">INF-04 完整文号精确查询</span>
+<span class="text-outline text-body-sm">|</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-semibold">INF-05 主题近义智能推荐</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Bi-Column Interactive Console -->
+<div class="px-space-lg py-space-md grid grid-cols-12 gap-gutter-desktop">
+<!-- LEFT PANEL: Query & Candidate Cards (5 cols) -->
+<div class="col-span-12 xl:col-span-5 flex flex-col gap-space-md">
+<!-- Query Mode Controller Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Mode Tabs -->
+<div class="flex p-0.5 bg-surface-container rounded-lg">
+<button class="flex-1 py-1.5 px-space-sm rounded-DEFAULT text-center font-label-caps text-label-caps transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center gap-space-xs" id="tab-docnum" onclick="switchMode('docnum')" type="button">
+<span class="material-symbols-outlined text-[16px]">tag</span>
+<span>【完整文号查询】INF-04</span>
+</button>
+<button class="flex-1 py-1.5 px-space-sm rounded-DEFAULT text-center font-label-caps text-label-caps transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-space-xs" id="tab-semantic" onclick="switchMode('semantic')" type="button">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>【主题近义推荐】INF-05</span>
+</button>
+</div>
+<!-- Input Box Section -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold" for="search-input" id="input-label">
+              公文正式文号 (支持规范符号归一化)
+            </label>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-0.5" id="normalize-hint">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+              自动转换 [] ［］ 【】 → 〔〕
+            </span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-[18px] text-outline">search</span>
+<input class="w-full h-10 pl-9 pr-24 rounded-lg bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="search-input" type="text" value="演示协同〔2026〕07号"/>
+<button class="absolute right-1 top-1 bottom-1 px-space-sm rounded-DEFAULT bg-primary text-on-primary font-label-caps text-label-caps flex items-center gap-1 hover:bg-primary-container transition-colors" onclick="triggerSearch()" type="button">
+<span>检索</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quick Examples Pill Strip -->
+<div class="flex items-center gap-space-xs flex-wrap pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">快捷填入:</span>
+<button class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-primary font-label-numeric-sm text-label-numeric-sm flex items-center gap-1 transition-all" onclick="fillExample('docnum', '演示协同〔2026〕07号')" type="button">
+<span class="material-symbols-outlined text-[14px]">bookmark</span>
+<span>演示协同〔2026〕07号</span>
+</button>
+<button class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1 transition-all" onclick="fillExample('semantic', '便民服务什么时候提数据')" type="button">
+<span class="material-symbols-outlined text-[14px]">chat_bubble</span>
+<span>「便民服务什么时候提数据」</span>
+</button>
+</div>
+<!-- Semantic Mapping Preview Notification (Shown on Semantic Mode) -->
+<div class="hidden rounded-lg bg-surface-container p-space-sm flex items-start gap-space-sm" id="semantic-mapping-banner">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">conversion_path</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps font-semibold text-on-surface">语义近义词典动态映射中</span>
+<span class="px-1 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">已命中</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              识别自然语言提问「便民服务什么时候提数据」，系统已智能对齐到标准政务术语：<span class="text-primary font-semibold">【何时报送数据】</span> 与 <span class="text-primary font-semibold">【报送时限规范】</span>。
+            </p>
+</div>
+</div>
+</div>
+<!-- RESULTS CONTAINER: Dynamic Views based on active mode -->
+<!-- MODE 1: Doc Number Result View (INF-04) -->
+<div class="flex flex-col gap-space-sm" id="results-docnum">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">检索结果：精确文号匹配</span>
+<span class="px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-numeric-sm text-label-numeric-sm font-semibold">唯一命中 (1/1)</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-outline">响应耗时: 18ms</span>
+</div>
+<!-- KB-003 Prime Target Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-sm">
+<!-- Top Accent Ribbon -->
+<div class="h-1 bg-primary w-full absolute top-0 left-0"></div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+                首条 · KB-003
+              </span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-on-primary-fixed-variant font-label-caps text-label-caps font-semibold">
+                现行有效
+              </span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-outline">置信度: 100% 精确匹配</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">《演示市街道便民服务数据报送规范》</h3>
+<p class="font-label-numeric-sm text-label-numeric-sm text-primary font-medium mt-0.5">文号: 演示协同〔2026〕07号</p>
+</div>
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="text-outline">来源:</span>
+<span class="text-on-surface font-medium">模拟·演示市政务服务中心</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-outline">发布日期:</span>
+<span class="text-on-surface font-label-numeric-sm text-label-numeric-sm">2026-03-18</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-outline">适用范围:</span>
+<span class="text-on-surface">全区各街道便民服务窗口</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-outline">核心条目:</span>
+<span class="text-secondary font-semibold">第 2 条 报送时限</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            规定街道公共便民服务事项办件的数据采集范围、统计周期、报送路径及核验基准，确立每月5日前定期报送制度。
+          </p>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<button class="px-space-sm py-1.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps flex items-center gap-1 transition-colors" onclick="focusArticle(1)" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>查看全文</span>
+</button>
+<button class="px-space-md py-1.5 rounded-DEFAULT bg-primary text-on-primary font-label-caps text-label-caps flex items-center gap-1.5 shadow-sm hover:bg-primary-container transition-all" onclick="focusArticle(2)" type="button">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>跳转到第 2 条（高亮）</span>
+</button>
+</div>
+</div>
+<!-- Audit Note Box -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[18px]">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            INF-04 验证结果：通过公文规范文号索引树，完成唯一性精准穿透，已自动定位核心生效条款。
+          </span>
+</div>
+</div>
+<!-- MODE 2: Semantic Intent Result View (INF-05, hidden initially) -->
+<div class="hidden flex flex-col gap-space-md" id="results-semantic">
+<!-- Primary Recommendations Group -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">recommend</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">主推荐区（按语义意图推荐）</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase font-semibold">优先采纳建议</span>
+</div>
+<!-- Semantic Card 1: KB-003 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold">
+                  KB-003 · 极高关联
+                </span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">
+                  现行基线
+                </span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-semibold">关联度 98.4%</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface font-semibold">《演示市街道便民服务数据报送规范》</h4>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface-variant">
+<span>文号: 演示协同〔2026〕07号</span>
+<span>·</span>
+<span>发布: 2026-03-18</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded font-body-sm text-body-sm text-on-surface">
+<span class="text-primary font-semibold">匹配理由：</span> 主题高度相近，智能语义精准指向<span class="text-secondary font-semibold">第2条关于“每月5日前报送”的时限规定</span>。
+            </div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-sm py-1.5 rounded-DEFAULT bg-primary text-on-primary font-label-caps text-label-caps flex items-center gap-1 shadow-sm hover:bg-primary-container transition-all" onclick="focusArticle(2)" type="button">
+<span class="material-symbols-outlined text-[16px]">input</span>
+<span>直接定位第 2 条</span>
+</button>
+</div>
+</div>
+<!-- Semantic Card 2: KB-004 Historical Context -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps font-semibold">
+                  KB-004 · 制度演进
+                </span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-outline font-label-caps text-label-caps font-bold">
+                  已替代 (历史沿革)
+                </span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-outline">关联度 68.1%</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface-variant font-medium">《街道政务服务数据交换旧规》</h4>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-outline">
+<span>文号: 演示政数〔2023〕14号</span>
+<span>·</span>
+<span>发布: 2023-08-10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              该制度包含早期数据报送时间窗口描述（原为每季度末），现已被 KB-003 正式接替。列出仅作为背景沿革参考。
+            </p>
+</div>
+</div>
+<!-- Secondary Sub-Recommendations Group (KB-005 Replacement Tracking) -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">history_edu</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">替代关系区（制度替换脉络）</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">已明确废止文件</span>
+</div>
+<!-- Semantic Card 3: KB-005 Revoked Document -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-caps text-label-caps font-bold">
+                  KB-005 · 已废止
+                </span>
+<span class="font-body-sm text-body-sm text-outline">原规字〔2021〕22号</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">被 KB-003 第4条废止</span>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">《便民服务数据统计规范(试行)》</span>
+<p class="mt-1 text-on-surface-variant">
+                注：该文件由于条款陈旧、统计口径差异，已在 2026 年新规施行当天由《演示市街道便民服务数据报送规范》正式宣布作废，不再作为当前填报与核查依据。
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Document Reader Canvas (7 cols) -->
+<div class="col-span-12 xl:col-span-7 flex flex-col gap-space-md">
+<!-- Document Container Card (Official Ledger Aesthetic) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col h-[calc(100vh-140px)]">
+<!-- Document Meta Header (Red & Navy Institutional Bar) -->
+<div class="bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant font-semibold">官方现行公文原文阅览</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-caps text-label-caps">
+                KB-003 · 官方核准本
+              </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-primary font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                现行有效 (2026年3月发布)
+              </span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+              演示市街道便民服务数据报送规范
+            </h2>
+<div class="flex flex-wrap items-center gap-space-md mt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-semibold">发文字号: 演示协同〔2026〕07号</span>
+<span>主送: 模拟·演示市各街道办事处、政务服务各网点</span>
+<span>签发日期: 2026-03-18</span>
+</div>
+</div>
+<!-- Anchor Navigation Quick Jumps -->
+<div class="flex items-center gap-space-xs overflow-x-auto pt-space-xs">
+<span class="font-label-caps text-label-caps text-outline uppercase font-semibold shrink-0">快速跳转:</span>
+<button class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" onclick="focusArticle(1)" type="button">
+              第1条 总则
+            </button>
+<button class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed hover:bg-primary-container hover:text-on-primary font-body-sm text-body-sm font-semibold whitespace-nowrap transition-colors flex items-center gap-1" onclick="focusArticle(2)" type="button">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+              第2条 报送时限 (重点)
+            </button>
+<button class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" onclick="focusArticle(3)" type="button">
+              第3条 数据接口
+            </button>
+<button class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" onclick="focusArticle(4)" type="button">
+              第4条 废止说明
+            </button>
+</div>
+</div>
+<!-- Document Main Content Body (Scrollable Official Article Stream) -->
+<div class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-lg bg-surface-container-lowest" id="document-scroll-container">
+<!-- Article 1 -->
+<div class="transition-all rounded-lg p-space-md hover:bg-surface-container-low flex flex-col gap-space-xs" id="art-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">01</span>
+                第一条 【总则与指导思想】
+              </span>
+<span class="font-label-caps text-label-caps text-outline">章一 · 总则</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-justify indent-8 mt-space-xs">
+              为深入贯彻落实数字化政务服务便民利民要求，健全街道基层政务服务数据综合报送机制，加强对社保、医保、民政、计生等基层常办高频便民服务事项运行效能的动态监测与科学决策分析，特制定本规范。
+            </p>
+</div>
+<!-- Article 2 (High-Target Focus Zone) -->
+<div class="transition-all rounded-xl p-space-md bg-surface-container-low shadow-sm flex flex-col gap-space-sm relative" id="art-2">
+<div class="absolute -left-1 top-4 bottom-4 w-1.5 bg-primary rounded-full"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold">02</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">第二条 【数据报送时限与范围】</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps font-bold">
+                  核心验证依据
+                </span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+                已锚定
+              </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-xs flex flex-col gap-space-xs">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed text-justify indent-8 font-medium">
+                各街道应当于<mark class="bg-secondary-fixed text-on-secondary-fixed font-bold px-1 rounded">每月5日前</mark>，将辖区上月街道便民服务办件数据统一汇总报送至演示市政务服务中心。统计范围限定为本级各街道窗口及自助终端办结的便民服务事项，计量单位统一为<mark class="bg-surface-container-high text-primary font-semibold px-1 rounded">“件”</mark>。
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-justify indent-8">
+                各街道需指定专职资料管理员负责数据采集初审，撰稿员应在预审完成前与平台核验基准做一致性交叉复核，确保月度报送数据完整、准时、无误。
+              </p>
+</div>
+<!-- Focus Context Metadata Footnote -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">psychology_alt</span>
+<span>主题关联推荐依据：针对「什么时候提数据」之权威答复条款</span>
+</div>
+<button class="text-primary hover:text-primary-container font-label-caps text-label-caps font-semibold flex items-center gap-0.5" onclick="copyClauseText()" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>复制该条款</span>
+</button>
+</div>
+</div>
+<!-- Article 3 -->
+<div class="transition-all rounded-lg p-space-md hover:bg-surface-container-low flex flex-col gap-space-xs" id="art-3">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">03</span>
+                第三条 【数据校验与报送接口】
+              </span>
+<span class="font-label-caps text-label-caps text-outline">章二 · 报送实施</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-justify indent-8 mt-space-xs">
+              报送采用全市一体化政务智辅系统标准数据接口或结构化报表模式。报送数据应当符合通用质检规则体系（v3.4.2），包括必填字段完整性校验、办理状态有效性核验以及跨月重复件排除规则。
+            </p>
+</div>
+<!-- Article 4 (Revocation Clause) -->
+<div class="transition-all rounded-lg p-space-md hover:bg-surface-container-low flex flex-col gap-space-xs" id="art-4">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">04</span>
+                第四条 【废止条款说明】
+              </span>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">附则 · 效力更替</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed text-justify indent-8 font-medium">
+                本规范自印发之日起施行，原<span class="text-secondary font-semibold">《便民服务数据统计规范(试行)》（KB-005）</span>同时废止。以往有关规定与本规范不一致的，一律以本规范为准。
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 pt-space-md text-on-surface-variant font-body-sm text-body-sm pb-space-lg">
+<span>模拟·演示市政务服务中心办公室</span>
+<span class="font-label-numeric-sm text-label-numeric-sm">2026年3月18日 印发</span>
+</div>
+</div>
+<!-- Document Reader Bottom Sticky Action Bar -->
+<div class="bg-surface-container-low px-space-md py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">bookmark_added</span>
+<span>当前引用选区:</span>
+<span class="font-semibold text-on-surface">KB-003 第二条 (每月5日前报送)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-caps text-label-caps flex items-center gap-1 shadow-sm transition-all" onclick="copyClauseText()" type="button">
+<span class="material-symbols-outlined text-[16px]">content_paste</span>
+<span>一键复制条款引用</span>
+</button>
+<button class="px-space-md py-1.5 rounded-DEFAULT bg-primary text-on-primary font-label-caps text-label-caps flex items-center gap-1.5 shadow-sm hover:bg-primary-container transition-all" onclick="insertToDraftReview()" type="button">
+<span class="material-symbols-outlined text-[16px]">post_add</span>
+<span>插入到文稿预审引用库</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interaction Toast Notification -->
+<div class="fixed bottom-6 right-8 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-lg shadow-xl flex items-center gap-space-sm transition-all opacity-0 pointer-events-none translate-y-2 z-50" id="toast">
+<span class="material-symbols-outlined text-[20px] text-inverse-primary" id="toast-icon">check_circle</span>
+<span class="font-body-md text-body-md" id="toast-msg">操作已完成</span>
+</div>
+</div>
+<script>
+  // Unified Search State Controller
+  function switchMode(mode) {
+    const tabDocnum = document.getElementById('tab-docnum');
+    const tabSemantic = document.getElementById('tab-semantic');
+    const resultsDocnum = document.getElementById('results-docnum');
+    const resultsSemantic = document.getElementById('results-semantic');
+    const searchInput = document.getElementById('search-input');
+    const inputLabel = document.getElementById('input-label');
+    const normalizeHint = document.getElementById('normalize-hint');
+    const semanticBanner = document.getElementById('semantic-mapping-banner');
+
+    if (mode === 'docnum') {
+      tabDocnum.className = 'flex-1 py-1.5 px-space-sm rounded-DEFAULT text-center font-label-caps text-label-caps transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center gap-space-xs';
+      tabSemantic.className = 'flex-1 py-1.5 px-space-sm rounded-DEFAULT text-center font-label-caps text-label-caps transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-space-xs';
+      resultsDocnum.classList.remove('hidden');
+      resultsSemantic.classList.add('hidden');
+      semanticBanner.classList.add('hidden');
+      normalizeHint.classList.remove('hidden');
+      inputLabel.innerText = '公文正式文号 (支持规范符号归一化)';
+      searchInput.value = '演示协同〔2026〕07号';
+      showToast('已切换至「完整文号查询 (INF-04)」模式');
+    } else {
+      tabSemantic.className = 'flex-1 py-1.5 px-space-sm rounded-DEFAULT text-center font-label-caps text-label-caps transition-all bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center gap-space-xs';
+      tabDocnum.className = 'flex-1 py-1.5 px-space-sm rounded-DEFAULT text-center font-label-caps text-label-caps transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-space-xs';
+      resultsDocnum.classList.add('hidden');
+      resultsSemantic.classList.remove('hidden');
+      semanticBanner.classList.remove('hidden');
+      normalizeHint.classList.add('hidden');
+      inputLabel.innerText = '自然语言主题 / 业务提问';
+      searchInput.value = '便民服务什么时候提数据';
+      showToast('已切换至「主题近义推荐 (INF-05)」模式');
+    }
+  }
+
+  function fillExample(mode, text) {
+    switchMode(mode);
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = text;
+    triggerSearch();
+  }
+
+  function triggerSearch() {
+    const searchInput = document.getElementById('search-input');
+    let val = searchInput.value;
+
+    // Automatic brackets normalization INF-04 requirement: [] ［］ 【】 => 〔〕
+    const normalized = val.replace(/[\[\［\【]/g, '〔').replace(/[\]\］\】]/g, '〕');
+    if (normalized !== val) {
+      searchInput.value = normalized;
+      showToast('已自动将文号括号归一化为六角括号〔〕');
+    } else {
+      showToast('检索匹配成功：已命中标准法规库条目');
+    }
+  }
+
+  function focusArticle(artNumber) {
+    const el = document.getElementById('art-' + artNumber);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Flash background highlight
+    const originalClasses = el.className;
+    el.classList.add('ring-2', 'ring-primary', 'bg-surface-container');
+    setTimeout(() => {
+      el.classList.remove('ring-2', 'ring-primary');
+    }, 1800);
+
+    showToast('已聚焦定位至公文第 ' + artNumber + ' 条');
+  }
+
+  function copyClauseText() {
+    const textToCopy = `【依据引用】《演示市街道便民服务数据报送规范》（演示协同〔2026〕07号）第二条：各街道应当于每月5日前，将辖区上月街道便民服务办件数据统一汇总报送至演示市政务服务中心。统计范围限定为本级各街道窗口及自助终端办结的便民服务事项，计量单位统一为“件”。`;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      showToast('条款引用文本已成功复制到剪贴板');
+    }).catch(() => {
+      showToast('条款引用文本已成功复制');
+    });
+  }
+
+  function insertToDraftReview() {
+    showToast('已成功插入《文稿预审》模块的引用依据库中');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.innerText = msg;
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+    }, 2800);
+  }
+</script></main></div></body></html>

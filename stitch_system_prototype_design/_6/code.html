@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono,+tabular-nums,+monospace:wght@100..900&family=Source+Sans+3,+PingFang+SC,+Microsoft+YaHei,+sans-serif:wght@100..900&family=Source+Sans+3,+PingFang+SC,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ba1a1a","surface-container-highest":"#d5e3fc","on-primary-fixed-variant":"#264872","surface-container-high":"#dce9ff","surface-variant":"#d5e3fc","on-error-container":"#93000a","surface-dim":"#ccdbf3","inverse-primary":"#a8c8fa","on-tertiary-fixed-variant":"#173bab","on-secondary-fixed":"#410005","inverse-surface":"#233144","tertiary":"#001658","on-primary":"#ffffff","on-secondary-container":"#65000c","on-primary-fixed":"#001c3a","on-secondary":"#ffffff","surface-tint":"#40608b","background":"#f8f9ff","surface-container":"#e6eeff","secondary-fixed":"#ffdad7","on-tertiary":"#ffffff","primary-fixed-dim":"#a8c8fa","tertiary-fixed":"#dde1ff","on-background":"#0d1c2e","secondary-fixed-dim":"#ffb3af","on-surface":"#0d1c2e","primary-fixed":"#d4e3ff","outline":"#73777f","error-container":"#ffdad6","surface-container-low":"#eff4ff","tertiary-container":"#002789","outline-variant":"#c3c6d0","on-tertiary-container":"#7a94ff","on-surface-variant":"#43474e","secondary-container":"#fd6260","surface-bright":"#f8f9ff","on-primary-container":"#7d9ccb","primary":"#001e3d","on-tertiary-fixed":"#001453","on-error":"#ffffff","tertiary-fixed-dim":"#b8c4ff","secondary":"#b12b2f","on-secondary-fixed-variant":"#8f0f1a","primary-container":"#0c335c","surface":"#f8f9ff","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","space-xl":"2rem","margin":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","gutter":"1rem","gutter-desktop":"1.5rem","space-md":"1rem","space-xs":"0.25rem"},fontFamily:{"headline-lg":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"body-lg":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"label-caps":["\"Source Sans 3, PingFang SC, sans-serif\""],"label-numeric-md":["\"JetBrains Mono, tabular-nums, monospace\""],"label-numeric-lg":["\"JetBrains Mono, tabular-nums, monospace\""],"label-numeric-sm":["\"JetBrains Mono, tabular-nums, monospace\""],"body-sm":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-md":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"body-md":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-xl":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""],"headline-xl-mobile":["\"Source Sans 3, PingFang SC, Microsoft YaHei, sans-serif\""]},fontSize:{"headline-lg":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-caps":["12px",{lineHeight:"16px",fontWeight:"600"}],"label-numeric-md":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-numeric-lg":["32px",{lineHeight:"36px",fontWeight:"700"}],"label-numeric-sm":["13px",{lineHeight:"16px",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["30px",{lineHeight:"38px",fontWeight:"700"}],"headline-xl-mobile":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-14 bg-primary text-on-primary z-50 shadow-[0_1px_8px_rgba(0,0,0,0.08)] flex items-center justify-between px-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">account_balance</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight font-semibold text-on-primary">演示市政务智辅平台</span><span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-caps text-label-caps">便民服务数据报送</span></div><span class="font-body-sm text-body-sm text-surface-dim font-label-numeric-sm">基线标准版本: 2026-11-19 · 街道级示范应用</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-primary-container/80 p-0.5 rounded-lg"><span class="font-body-sm text-body-sm text-surface-container-high px-space-xs">当前身份角色</span><div class="flex items-center gap-0.5"><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps bg-surface-container-lowest text-primary shadow-[0_1px_2px_rgba(0,0,0,0.06)]" type="button">资料管理员</button><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps text-surface-container-high hover:text-on-primary transition-colors" type="button">撰稿员</button><button class="px-space-sm py-1 rounded-DEFAULT font-label-caps text-label-caps text-surface-container-high hover:text-on-primary transition-colors" type="button">审核员</button></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary/20 text-secondary-fixed"><span class="material-symbols-outlined text-[16px]">info</span><span class="font-body-sm text-body-sm">验收匹配: 资料入库流转中</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-surface-container-highest px-space-sm py-1 rounded-DEFAULT bg-primary-container"><span class="material-symbols-outlined text-[16px]">event</span><span>2026-11-19</span></div><button class="flex items-center gap-space-xs px-space-sm py-1 rounded-DEFAULT bg-primary-container text-surface-container-high hover:bg-surface-container-highest hover:text-on-surface transition-colors font-body-sm text-body-sm" title="重置演示会话(S-07)" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span class="hidden lg:inline">重置会话 (S-07)</span></button><button class="w-8 h-8 rounded-DEFAULT bg-primary-container text-surface-container-high hover:text-on-primary flex items-center justify-center transition-colors" title="帮助与说明" type="button"><span class="material-symbols-outlined text-[18px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-14 bottom-0 w-64 bg-surface-container-low z-40 flex flex-col justify-between p-space-sm shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">业务协作工作台</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.06)]"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">总览</span></div><span class="font-label-numeric-sm text-label-numeric-sm text-outline">01</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="intake" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">move_to_inbox</span><span class="font-body-md text-body-md">资料归集</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">资料员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="search" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">manage_search</span><span class="font-body-md text-body-md">依据检索</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="draft" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-body-md text-body-md">文稿预审</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="review" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">approval_delegation</span><span class="font-body-md text-body-md">审核办理</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">审核员</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.06)]" data-path="analysis" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">办件分析</span></div><span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员</span></a></nav></div><div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-[18px] text-primary">verified_user</span><span class="font-label-caps text-label-caps font-semibold">街道数据质检引擎</span></div><div class="flex justify-between items-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm"><span>规则库版本:</span><span>v3.4.2</span></div><div class="flex justify-between items-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm"><span>验证链路:</span><span class="text-secondary font-semibold">12项核验项就绪</span></div></div></aside><div class="pl-64"><main class="w-full pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- 顶部面包屑与状态条 -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">analytics</span>
+<span>市政务智辅平台</span>
+<span>/</span>
+<span>便民服务数据报送</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">办件分析工作台 (AnalysisPage)</span>
+<span class="ml-space-xs px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">撰稿员专用</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded-DEFAULT bg-surface-container text-on-surface font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">verified</span>
+<span>双项验收准备：VIS-01 (抽取核验) · VIS-02 (趋势与BOM导出)</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-lowest text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span>基线校验算法:</span>
+<span class="text-secondary font-semibold">Strict-Sum-530</span>
+</div>
+</div>
+</div>
+<div class="p-space-md space-y-space-md">
+<!-- 1. 顶部操作与筛选栏 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-sm bg-surface-container-low/50 -m-space-md p-space-md mb-0">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">query_stats</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-primary font-bold">办件分析工作台</h1>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary text-on-primary font-label-caps text-label-caps">角色：撰稿员</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-on-primary-fixed-variant font-label-numeric-sm text-label-numeric-sm">数据源: chart-data.json</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">街道便民服务高频事项周期性报送数据核对、归集抽样比对及趋势图表自动建模控制台。</p>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-DEFAULT bg-surface-container-high text-primary hover:bg-surface-container-highest transition-colors font-body-md text-body-md font-semibold" id="btn-recheck" type="button">
+<span class="material-symbols-outlined text-[18px]">rule_folder</span>
+<span>开始核对</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-DEFAULT bg-primary-container text-on-primary hover:bg-primary transition-colors font-body-md text-body-md font-semibold shadow-sm" id="btn-reuse-extract" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>复用抽取 (UP-01)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant hover:bg-surface-dim transition-colors font-body-md text-body-md font-semibold" id="btn-export-csv" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>导出 CSV (带BOM)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-DEFAULT bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors font-body-md text-body-md" id="btn-print" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="hidden sm:inline">打印预览</span>
+</button>
+</div>
+</div>
+<!-- 筛选栏与条件控制 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center pt-space-xs">
+<div class="md:col-span-4 flex items-center gap-space-sm">
+<label class="font-body-md text-body-md text-on-surface whitespace-nowrap font-medium flex items-center gap-1" for="filter-street">
+<span class="material-symbols-outlined text-[18px] text-outline">location_city</span>
+            街道范围:
+          </label>
+<select class="w-full h-9 px-space-sm rounded-DEFAULT bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:bg-surface-container-low outline-none transition-colors" id="filter-street">
+<option selected="" value="ALL">全部街道 (两江街道 / 云桥街道)</option>
+<option value="LJ">两江街道</option>
+<option value="YQ">云桥街道</option>
+</select>
+</div>
+<div class="md:col-span-5 flex items-center gap-space-sm">
+<label class="font-body-md text-body-md text-on-surface whitespace-nowrap font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_month</span>
+            起止年月:
+          </label>
+<div class="flex items-center gap-space-xs w-full">
+<input class="h-9 px-space-sm rounded-DEFAULT bg-surface-container-lowest text-on-surface font-label-numeric-sm text-label-numeric-sm w-full outline-none" id="filter-start" type="month" value="2026-07"/>
+<span class="text-outline font-label-caps text-label-caps">至</span>
+<input class="h-9 px-space-sm rounded-DEFAULT bg-surface-container-lowest text-on-surface font-label-numeric-sm text-label-numeric-sm w-full outline-none" id="filter-end" type="month" value="2026-10"/>
+</div>
+</div>
+<div class="md:col-span-3 flex items-center justify-end gap-space-sm">
+<div class="flex items-center gap-1 px-space-sm py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+<span>异常探测：已锁定 1 处待补项</span>
+</div>
+</div>
+</div>
+<!-- UP-01 复用抽取就绪状态提示条 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-primary" id="extract-banner">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-primary-container">hub</span>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-semibold">UP-01 资料归集抽取链路已连通:</span>
+<span class="font-body-sm text-body-sm text-on-surface">两江街道 2026-10 抽取值</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-primary-container text-on-primary font-label-numeric-sm text-label-numeric-sm font-bold">296</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">↔ DATA-04 核验一致；</span>
+<span class="font-body-sm text-body-sm text-on-surface">云桥街道 2026-10 抽取值</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-primary-container text-on-primary font-label-numeric-sm text-label-numeric-sm font-bold">234</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">↔ DATA-08 核验一致。</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-on-primary-fixed-variant self-end sm:self-auto">
+<span class="material-symbols-outlined text-[16px] text-primary">task_alt</span>
+<span>双街比对已校验通过</span>
+</div>
+</div>
+</div>
+<!-- 2. 上半部分：【街道便民服务办件台账核对表】 (VIS-01) -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">table_chart</span>
+<span class="font-headline-md text-headline-md text-primary font-semibold">街道便民服务办件台账核对表</span>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">VIS-01 台账核对</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<span>总记录数: <strong class="text-on-surface font-label-numeric-sm text-label-numeric-sm">10</strong> 笔 (含 1 项异常单、1 项测试单)</span>
+<span class="hidden md:inline">|</span>
+<span class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-DEFAULT bg-secondary inline-block"></span>
+<span>异常单 DATA-X01 严格脱敏隔离</span>
+</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-2.5 px-space-md">编号</th>
+<th class="py-2.5 px-space-md">街道名称</th>
+<th class="py-2.5 px-space-md">统计期 (YYYY-MM)</th>
+<th class="py-2.5 px-space-md text-right">办件数值</th>
+<th class="py-2.5 px-space-md text-center">计量单位</th>
+<th class="py-2.5 px-space-md">数据来源</th>
+<th class="py-2.5 px-space-md">格式校验结论</th>
+<th class="py-2.5 px-space-md">抽取比对结论 (UP-01)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/60" id="table-body">
+<!-- DATA-01 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-street="LJ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">DATA-01</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">两江街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-07</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-primary">240</td>
+<td class="py-2.5 px-space-md text-center text-on-surface-variant">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">街道便民中心月报台账</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">历史基线已归档</td>
+</tr>
+<!-- DATA-02 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-street="LJ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">DATA-02</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">两江街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-08</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-primary">265</td>
+<td class="py-2.5 px-space-md text-center text-on-surface-variant">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">街道便民中心月报台账</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">历史基线已归档</td>
+</tr>
+<!-- DATA-03 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-street="LJ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">DATA-03</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">两江街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-09</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-primary">280</td>
+<td class="py-2.5 px-space-md text-center text-on-surface-variant">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">街道便民中心月报台账</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">历史基线已归档</td>
+</tr>
+<!-- DATA-04 (核心关键行) -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container-high transition-colors" data-street="LJ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-primary font-bold">DATA-04</td>
+<td class="py-2.5 px-space-md text-on-surface font-bold flex items-center gap-1">
+<span>两江街道</span>
+<span class="px-1 py-0.2 rounded-DEFAULT bg-primary-container text-on-primary font-label-caps text-label-caps">本期核对</span>
+</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm font-semibold text-primary">2026-10</td>
+<td class="py-2.5 px-space-md font-label-numeric-lg text-[22px] text-right text-primary font-bold">296</td>
+<td class="py-2.5 px-space-md text-center font-semibold text-primary">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface">街道便民中心月报台账 (chart-data.json)</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps font-bold">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-primary-fixed-variant font-semibold">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>与 UP-01 抽取一致 (296)</span>
+</div>
+</td>
+</tr>
+<!-- DATA-05 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-street="YQ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">DATA-05</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">云桥街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-07</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-secondary">190</td>
+<td class="py-2.5 px-space-md text-center text-on-surface-variant">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">街道政务服务受理科台账</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">历史基线已归档</td>
+</tr>
+<!-- DATA-06 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-street="YQ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">DATA-06</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">云桥街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-08</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-secondary">210</td>
+<td class="py-2.5 px-space-md text-center text-on-surface-variant">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">街道政务服务受理科台账</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">历史基线已归档</td>
+</tr>
+<!-- DATA-07 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-street="YQ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">DATA-07</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">云桥街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-09</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-secondary">225</td>
+<td class="py-2.5 px-space-md text-center text-on-surface-variant">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">街道政务服务受理科台账</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">历史基线已归档</td>
+</tr>
+<!-- DATA-08 (核心关键行) -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container-high transition-colors" data-street="YQ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-secondary font-bold">DATA-08</td>
+<td class="py-2.5 px-space-md text-on-surface font-bold flex items-center gap-1">
+<span>云桥街道</span>
+<span class="px-1 py-0.2 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">本期核对</span>
+</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm font-semibold text-secondary">2026-10</td>
+<td class="py-2.5 px-space-md font-label-numeric-lg text-[22px] text-right text-secondary font-bold">234</td>
+<td class="py-2.5 px-space-md text-center font-semibold text-secondary">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface">街道政务服务受理科台账 (chart-data.json)</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps font-bold">通过</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-secondary-fixed-variant font-semibold">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>与 UP-01 抽取一致 (234)</span>
+</div>
+</td>
+</tr>
+<!-- 重点异常行 DATA-X01 -->
+<tr class="bg-error-container/40 hover:bg-error-container/60 transition-colors" data-anomaly="true" data-street="LJ">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+<span>DATA-X01</span>
+</td>
+<td class="py-2.5 px-space-md text-on-surface font-semibold">两江街道</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-error">2026-10</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-error line-through">12</td>
+<td class="py-2.5 px-space-md text-center">
+<span class="inline-block px-2 py-0.5 rounded-DEFAULT bg-error text-on-error font-label-caps text-label-caps font-bold animate-pulse">待补充</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">未知临时报送缓存</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-caps text-label-caps font-bold">格式错误</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-error font-semibold">
+                缺单位，待补充，严格不计入 530 合计，不进折线图
+              </td>
+</tr>
+<!-- 手工录入测试行（不进趋势图） -->
+<tr class="bg-surface-container-low/40 opacity-70 hover:opacity-100 transition-opacity" data-test="true">
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm text-outline">TEST-09</td>
+<td class="py-2.5 px-space-md text-on-surface-variant">两江街道(沙盒)</td>
+<td class="py-2.5 px-space-md font-label-numeric-sm text-label-numeric-sm">2026-10</td>
+<td class="py-2.5 px-space-md font-label-numeric-md text-label-numeric-md text-right text-outline">8</td>
+<td class="py-2.5 px-space-md text-center text-outline">件</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-outline">手工录入测试行</td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-DEFAULT bg-surface-container text-outline font-label-caps text-label-caps">测试状态</span>
+</td>
+<td class="py-2.5 px-space-md font-body-sm text-body-sm text-outline">
+                调试沙盒数据，自动阻断不进趋势图
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 3. 中间核心：【10月份办件核对基线卡】 -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">pin_drop</span>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">10月份办件核对基线卡</h2>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-primary-container text-on-primary font-label-caps text-label-caps">恒定锚点</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">lock</span>
+          指标受核对规则严格保护：即使上方街道筛选变动，本基线卡恒定展示 10 月全局基准
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- 两江街道卡片 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">街道基线核对 · 本期</span>
+<span class="px-1.5 py-0.2 rounded-DEFAULT bg-surface-container-high text-on-primary-fixed-variant font-label-numeric-sm text-label-numeric-sm">DATA-04</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<span class="font-headline-lg text-headline-lg text-primary font-bold">两江街道办件量</span>
+</div>
+</div>
+<div class="my-space-md flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-label-numeric-lg text-[44px] text-primary font-bold tracking-tight">296</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-semibold">件</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-semibold">环比 +5.7%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">09月: 280件</span>
+</div>
+</div>
+<div class="pt-space-xs bg-surface-container-low -mx-space-md -mb-space-md p-space-sm flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">UP-01 抽取匹配：</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">完全一致 (296件)</span>
+</div>
+</div>
+<!-- 云桥街道卡片 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">街道基线核对 · 本期</span>
+<span class="px-1.5 py-0.2 rounded-DEFAULT bg-secondary-fixed text-on-secondary-fixed font-label-numeric-sm text-label-numeric-sm">DATA-08</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">云桥街道办件量</span>
+</div>
+</div>
+<div class="my-space-md flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-label-numeric-lg text-[44px] text-secondary font-bold tracking-tight">234</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-semibold">件</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">环比 +4.0%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">09月: 225件</span>
+</div>
+</div>
+<div class="pt-space-xs bg-surface-container-low -mx-space-md -mb-space-md p-space-sm flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">UP-01 抽取匹配：</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-bold">完全一致 (234件)</span>
+</div>
+</div>
+<!-- 10月两街道合计卡片 (530严格核对) -->
+<div class="bg-primary text-on-primary p-space-md rounded-lg shadow-md relative overflow-hidden flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider">政务统计法定核定总额</span>
+<span class="px-1.5 py-0.2 rounded-DEFAULT bg-error text-on-error font-label-numeric-sm text-label-numeric-sm font-bold">DATA-X01 已剔除</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-inverse-primary">balance</span>
+<span class="font-headline-lg text-headline-lg text-on-primary font-bold">10月两街道办件合计</span>
+</div>
+</div>
+<div class="my-space-md flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-label-numeric-lg text-[50px] leading-none text-on-primary font-bold tracking-tight">530</span>
+<span class="font-body-md text-body-md text-surface-container-high font-semibold">件</span>
+</div>
+<div class="text-right">
+<div class="font-label-numeric-sm text-label-numeric-sm text-inverse-primary font-semibold">严格核验式:</div>
+<div class="font-label-numeric-sm text-label-numeric-sm text-on-primary font-mono">296 + 234 = 530</div>
+</div>
+</div>
+<div class="pt-space-xs bg-primary-container -mx-space-md -mb-space-md p-space-sm flex items-center justify-between font-body-sm text-body-sm text-surface-container-high">
+<span class="flex items-center gap-1 text-on-primary">
+<span class="material-symbols-outlined text-[15px] text-inverse-primary">check_box</span>
+<span>数据一致性审查无误</span>
+</span>
+<span class="text-surface-dim font-label-numeric-sm text-label-numeric-sm">有效纳统率: 100%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. 下半部分：【便民服务办件趋势图与数据导出】 (VIS-02) -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-md space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container-high">
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-primary">show_chart</span>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">便民服务办件趋势分析图 (2026.07 - 2026.10)</h3>
+<span class="px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-primary-fixed-variant font-label-caps text-label-caps">VIS-02 双线条高对比度折线图</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">两江街道（深蓝）与云桥街道（暗红）连续四月便民服务办结件数演进图，DATA-X01已依法剔除。</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="w-4 h-1.5 rounded-full bg-primary inline-block"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">两江街道 (0c335c)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">云桥街道 (9f1d24)</span>
+</div>
+</div>
+</div>
+<!-- 高保真矢量折线图与网格 -->
+<div class="relative w-full bg-surface rounded-lg p-space-md overflow-hidden">
+<div class="w-full h-72">
+<svg class="w-full h-full select-none" preserveaspectratio="none" viewbox="0 0 880 280">
+<defs>
+<!-- 渐变阴影 -->
+<lineargradient id="grad-lj" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0c335c" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#0c335c" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="grad-yq" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#b12b2f" stop-opacity="0.14"></stop>
+<stop offset="100%" stop-color="#b12b2f" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- 纵坐标平滑网格线 (0 ~ 360) 
+                 高度: 240px 区域 (Y: 20 到 240)，基准步长 60 件 -> 0, 60, 120, 180, 240, 300, 360
+                 Y = 240 - (val / 360) * 200
+            -->
+<!-- 360件: y=40 -->
+<line stroke="#d5e3fc" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="840" y1="40" y2="40"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="44">360</text>
+<!-- 300件: y=73.3 -->
+<line stroke="#d5e3fc" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="840" y1="73.3" y2="73.3"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="77">300</text>
+<!-- 240件: y=106.6 -->
+<line stroke="#d5e3fc" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="840" y1="106.6" y2="106.6"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="111">240</text>
+<!-- 180件: y=140 -->
+<line stroke="#d5e3fc" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="840" y1="140" y2="140"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="144">180</text>
+<!-- 120件: y=173.3 -->
+<line stroke="#d5e3fc" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="840" y1="173.3" y2="173.3"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="177">120</text>
+<!-- 60件: y=206.6 -->
+<line stroke="#d5e3fc" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="840" y1="206.6" y2="206.6"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="211">60</text>
+<!-- 0件 基准轴: y=240 -->
+<line stroke="#73777f" stroke-width="1.5" x1="60" x2="840" y1="240" y2="240"></line>
+<text fill="#73777f" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end" x="50" y="244">0</text>
+<!-- X 轴刻度对应:
+                 07月: X=150
+                 08月: X=360
+                 09月: X=570
+                 10月: X=780
+            -->
+<!-- 竖向对齐虚线 -->
+<line stroke="#e6eeff" stroke-width="1" x1="150" x2="150" y1="40" y2="240"></line>
+<line stroke="#e6eeff" stroke-width="1" x1="360" x2="360" y1="40" y2="240"></line>
+<line stroke="#e6eeff" stroke-width="1" x1="570" x2="570" y1="40" y2="240"></line>
+<line stroke="#e6eeff" stroke-width="1" x1="780" x2="780" y1="40" y2="240"></line>
+<!-- 两江街道数据折线与面积 (240, 265, 280, 296)
+                 P1: (150, 106.6)
+                 P2: (360, 92.7)   [240 - (265/360)*200 = 92.7]
+                 P3: (570, 84.4)   [240 - (280/360)*200 = 84.4]
+                 P4: (780, 75.5)   [240 - (296/360)*200 = 75.5]
+            -->
+<polygon fill="url(#grad-lj)" points="150,106.6 360,92.7 570,84.4 780,75.5 780,240 150,240"></polygon>
+<polyline fill="none" points="150,106.6 360,92.7 570,84.4 780,75.5" stroke="#0c335c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></polyline>
+<!-- 云桥街道数据折线与面积 (190, 210, 225, 234)
+                 P1: (150, 134.4)  [240 - (190/360)*200 = 134.4]
+                 P2: (360, 123.3)  [240 - (210/360)*200 = 123.3]
+                 P3: (570, 115.0)  [240 - (225/360)*200 = 115.0]
+                 P4: (780, 110.0)  [240 - (234/360)*200 = 110.0]
+            -->
+<polygon fill="url(#grad-yq)" points="150,134.4 360,123.3 570,115.0 780,110.0 780,240 150,240"></polygon>
+<polyline fill="none" points="150,134.4 360,123.3 570,115.0 780,110.0" stroke="#9f1d24" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- 数据节点: 两江街道 (深蓝点与标签) -->
+<g class="cursor-pointer">
+<circle cx="150" cy="106.6" fill="#ffffff" r="4.5" stroke="#0c335c" stroke-width="2.5"></circle>
+<text fill="#001e3d" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" text-anchor="middle" x="150" y="96">240</text>
+</g>
+<g class="cursor-pointer">
+<circle cx="360" cy="92.7" fill="#ffffff" r="4.5" stroke="#0c335c" stroke-width="2.5"></circle>
+<text fill="#001e3d" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" text-anchor="middle" x="360" y="82">265</text>
+</g>
+<g class="cursor-pointer">
+<circle cx="570" cy="84.4" fill="#ffffff" r="4.5" stroke="#0c335c" stroke-width="2.5"></circle>
+<text fill="#001e3d" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" text-anchor="middle" x="570" y="74">280</text>
+</g>
+<!-- 10月高亮强调点 -->
+<g class="cursor-pointer">
+<circle cx="780" cy="75.5" fill="#0c335c" r="7"></circle>
+<circle cx="780" cy="75.5" fill="#ffffff" r="3.5"></circle>
+<rect fill="#001e3d" height="22" rx="2" width="60" x="750" y="44"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle" x="780" y="59">296 件</text>
+</g>
+<!-- 数据节点: 云桥街道 (暗红点与标签) -->
+<g class="cursor-pointer">
+<circle cx="150" cy="134.4" fill="#ffffff" r="4" stroke="#9f1d24" stroke-width="2"></circle>
+<text fill="#8f0f1a" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" text-anchor="middle" x="150" y="152">190</text>
+</g>
+<g class="cursor-pointer">
+<circle cx="360" cy="123.3" fill="#ffffff" r="4" stroke="#9f1d24" stroke-width="2"></circle>
+<text fill="#8f0f1a" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" text-anchor="middle" x="360" y="141">210</text>
+</g>
+<g class="cursor-pointer">
+<circle cx="570" cy="115.0" fill="#ffffff" r="4" stroke="#9f1d24" stroke-width="2"></circle>
+<text fill="#8f0f1a" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" text-anchor="middle" x="570" y="133">225</text>
+</g>
+<!-- 10月高亮强调点 -->
+<g class="cursor-pointer">
+<circle cx="780" cy="110.0" fill="#9f1d24" r="6.5"></circle>
+<circle cx="780" cy="110.0" fill="#ffffff" r="3"></circle>
+<rect fill="#b12b2f" height="22" rx="2" width="60" x="750" y="122"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle" x="780" y="137">234 件</text>
+</g>
+<!-- X 轴标签 -->
+<text fill="#0d1c2e" font-family="Source Sans 3, PingFang SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="150" y="260">2026年07月</text>
+<text fill="#0d1c2e" font-family="Source Sans 3, PingFang SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="360" y="260">2026年08月</text>
+<text fill="#0d1c2e" font-family="Source Sans 3, PingFang SC, sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="570" y="260">2026年09月</text>
+<text fill="#001e3d" font-family="Source Sans 3, PingFang SC, sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="780" y="260">2026年10月 (本期基线)</text>
+</svg>
+</div>
+</div>
+<!-- 图表下方规范三行元数据信息条 -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT space-y-space-xs">
+<div class="flex items-center gap-space-sm font-body-md text-body-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant w-28 uppercase">行 1 · 数据来源:</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">街道便民服务办件台账 (关联系统抽检 chart-data.json)</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-md text-body-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant w-28 uppercase">行 2 · 当前统计周期:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">2026年07月 至 2026年10月</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(连续4统计月，按自然月汇总)</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-md text-body-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant w-28 uppercase">行 3 · 计量单位:</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">件 (标准政务综合受理办结件数)</span>
+</div>
+</div>
+<!-- 数据导出与审计核查操作条 -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">security</span>
+<span>导出文件已嵌入 UTF-8 带 BOM (0xEF, 0xBB, 0xBF)，确保 Excel、WPS 完美识别中文不乱码。</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto flex items-center justify-center gap-space-xs px-space-lg py-2 rounded-DEFAULT bg-primary text-on-primary hover:bg-primary-container transition-all font-body-md text-body-md font-bold shadow-sm" id="btn-export-bom-direct" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>一键导出「便民服务办件趋势.csv」</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // 街道筛选与过滤交互
+  const streetFilter = document.getElementById('filter-street');
+  const tableRows = document.querySelectorAll('#table-body tr');
+
+  streetFilter.addEventListener('change', function(e) {
+    const val = e.target.value;
+    tableRows.forEach(row => {
+      const rowStreet = row.getAttribute('data-street');
+      const isTest = row.getAttribute('data-test');
+      if (val === 'ALL') {
+        row.style.display = '';
+      } else if (val === rowStreet || isTest) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+
+  // 复用抽取 (UP-01) 交互
+  document.getElementById('btn-reuse-extract').addEventListener('click', function() {
+    const banner = document.getElementById('extract-banner');
+    banner.classList.add('bg-primary', 'text-on-primary');
+    banner.classList.remove('bg-surface-container-low', 'text-primary');
+    setTimeout(() => {
+      banner.classList.remove('bg-primary', 'text-on-primary');
+      banner.classList.add('bg-surface-container-low', 'text-primary');
+    }, 1500);
+    alert('【UP-01 抽取成功】已同步资料归集模块数据：\n· 两江街道 2026-10: 296件 (已对应 DATA-04)\n· 云桥街道 2026-10: 234件 (已对应 DATA-08)\n· 异常行 DATA-X01 缺失计量单位，维持剔除状态！');
+  });
+
+  // 开始核对按钮
+  document.getElementById('btn-recheck').addEventListener('click', function() {
+    alert('【台账核对完成】\n· DATA-01 至 DATA-08 格式核验全部通过；\n· 发现 1 处异常记录：DATA-X01 (两江街道 2026-10，值12，单位缺漏)，已做待补充拦截；\n· 10月份合法总计为 530 件 (296 + 234)。');
+  });
+
+  // 严格 UTF-8 带 BOM CSV 导出功能
+  function triggerBOMCsvDownload() {
+    // 包含列: 街道,统计期,办结件数,计量单位,数据来源
+    const csvContent = 
+      "街道,统计期,办结件数,计量单位,数据来源\n" +
+      "两江街道,2026-07,240,件,街道便民中心月报台账\n" +
+      "两江街道,2026-08,265,件,街道便民中心月报台账\n" +
+      "两江街道,2026-09,280,件,街道便民中心月报台账\n" +
+      "两江街道,2026-10,296,件,街道便民中心月报台账(UP-01核对)\n" +
+      "云桥街道,2026-07,190,件,街道政务服务受理科台账\n" +
+      "云桥街道,2026-08,210,件,街道政务服务受理科台账\n" +
+      "云桥街道,2026-09,225,件,街道政务服务受理科台账\n" +
+      "云桥街道,2026-10,234,件,街道政务服务受理科台账(UP-01核对)\n";
+
+    // 添加 UTF-8 BOM: 0xEF, 0xBB, 0xBF
+    const bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+    const blob = new Blob([bom, csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', '便民服务办件趋势.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  document.getElementById('btn-export-csv').addEventListener('click', triggerBOMCsvDownload);
+  document.getElementById('btn-export-bom-direct').addEventListener('click', triggerBOMCsvDownload);
+</script></main></div></body></html>

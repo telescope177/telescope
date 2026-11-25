@@ -1,0 +1,118 @@
+[
+  {
+    "id": "KB-001",
+    "title": "关于加强政务服务数据共享的指导意见",
+    "docNo": "国办发〔2024〕18号",
+    "category": "政策文件",
+    "ledger": false,
+    "level": "中央",
+    "status": "现行",
+    "source": "国务院办公厅",
+    "publishedAt": "2024-06-12",
+    "versionLabel": "现行",
+    "summary": "上位依据。政务服务数据按需共享，来源可追溯。",
+    "replaces": null,
+    "replacedBy": null,
+    "articles": [
+      { "no": 1, "text": "推进政务服务数据按需共享，避免重复采集。" },
+      { "no": 2, "text": "各部门应明确数据责任单位，保证来源可追溯。" }
+    ]
+  },
+  {
+    "id": "KB-002",
+    "title": "省政务服务便民数据管理暂行办法",
+    "docNo": "政办发〔2025〕12号",
+    "category": "政策文件",
+    "ledger": false,
+    "level": "省级",
+    "status": "现行",
+    "source": "省政府公报",
+    "publishedAt": "2025-04-02",
+    "versionLabel": "现行",
+    "summary": "要求设区的市按月汇总街道便民服务办件数据。",
+    "replaces": null,
+    "replacedBy": null,
+    "articles": [
+      { "no": 1, "text": "省级便民服务数据实行统一统计口径。" },
+      { "no": 2, "text": "设区的市应当按月汇总街道办件数据，并保留原始台账。" }
+    ]
+  },
+  {
+    "id": "KB-003",
+    "title": "关于规范街道便民服务数据报送工作的通知",
+    "docNo": "协同〔2026〕07号",
+    "category": "政策文件",
+    "ledger": false,
+    "level": "市级",
+    "status": "现行",
+    "source": "市政务服务中心",
+    "publishedAt": "2026-03-18",
+    "versionLabel": "现行",
+    "summary": "现行市级文件。街道每月 5 日前报送上月办件，适用范围为本级各街道便民服务中心。",
+    "replaces": "KB-005",
+    "replacedBy": null,
+    "articles": [
+      { "no": 1, "text": "为规范街道便民服务数据报送，提升运行监测的及时性和可比性，制定本通知。" },
+      { "no": 2, "text": "本级各街道便民服务中心应当于每月 5 日前，报送上月便民服务办件数量。统计口径为办结件数，计量单位为件。" },
+      { "no": 3, "text": "报送数据应注明统计期、数值和计量单位。单位缺失的记录不得计入正式统计。" },
+      { "no": 4, "text": "本通知自 2026 年 4 月 1 日起施行，原协同〔2025〕09号同时废止。" }
+    ]
+  },
+  {
+    "id": "KB-004",
+    "title": "街道便民服务数据月报口径（试行）",
+    "docNo": "协同〔2025〕21号",
+    "category": "口径说明",
+    "ledger": false,
+    "level": "市级",
+    "status": "已替代",
+    "source": "市政务服务中心",
+    "publishedAt": "2025-08-19",
+    "versionLabel": "试行·已替代",
+    "summary": "旧版月报口径，已被 KB-003 替代。",
+    "replaces": null,
+    "replacedBy": "KB-003",
+    "articles": [
+      { "no": 1, "text": "本口径用于街道便民服务月报试行期间的指标解释。" },
+      { "no": 2, "text": "办件按自然月统计，次月 10 日前报送。该时点已被现行通知调整。" }
+    ]
+  },
+  {
+    "id": "KB-005",
+    "title": "关于规范街道便民服务数据报送工作的通知",
+    "docNo": "协同〔2025〕09号",
+    "category": "政策文件",
+    "ledger": false,
+    "level": "市级",
+    "status": "被替代",
+    "source": "市政务服务中心",
+    "publishedAt": "2025-03-06",
+    "versionLabel": "旧版·被替代",
+    "summary": "现行通知的前稿。报送范围为全市各部门，时限为每月 15 日前。",
+    "replaces": null,
+    "replacedBy": "KB-003",
+    "articles": [
+      { "no": 1, "text": "为汇总全市便民服务办件情况，提出本报送要求。" },
+      { "no": 2, "text": "请全市各部门于每月 15 日前汇总报送便民服务数据。" }
+    ]
+  },
+  {
+    "id": "KB-006",
+    "title": "街道便民服务办件台账（2026 年 7–10 月）",
+    "docNo": "台账-2026-07-10",
+    "category": "台账",
+    "ledger": true,
+    "level": "本级",
+    "status": "现行",
+    "source": "街道便民服务中心台账",
+    "publishedAt": "2026-11-02",
+    "versionLabel": "台账",
+    "summary": "两江街道、云桥街道 2026 年 7 月至 10 月办结件数。",
+    "replaces": null,
+    "replacedBy": null,
+    "articles": [
+      { "no": 1, "text": "统计对象为两江街道、云桥街道便民服务中心办结件数。" },
+      { "no": 2, "text": "2026 年 10 月两江街道 296 件，云桥街道 234 件。" }
+    ]
+  }
+]

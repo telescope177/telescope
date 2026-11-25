@@ -1,0 +1,34 @@
+[
+  {
+    "id": "UP-01",
+    "kind": "通知",
+    "filename": "关于做好2026年10月便民服务数据报送的提醒.pdf",
+    "title": "关于做好 2026 年 10 月便民服务数据报送的提醒",
+    "docNo": "协同〔2026〕31号",
+    "docNoStatus": "正常",
+    "summary": "提醒各街道核对 10 月办结件数，并给出两江、云桥两个街道的办结数。",
+    "body": [
+      { "anchor": "s1", "text": "请各街道于 11 月 5 日前完成 10 月数据补报，统计期为 2026 年 10 月，计量单位为件。" },
+      { "anchor": "s2", "text": "其中两江街道办结 296 件，云桥街道办结 234 件。" }
+    ],
+    "indicators": [
+      { "id": "UP-01-A", "name": "办结件数", "street": "两江街道", "period": "2026-10", "value": 296, "unit": "件", "unitStatus": "正常", "position": "正文第 2 句", "anchor": "s2", "matchesRow": "DATA-04" },
+      { "id": "UP-01-B", "name": "办结件数", "street": "云桥街道", "period": "2026-10", "value": 234, "unit": "件", "unitStatus": "正常", "position": "正文第 2 句", "anchor": "s2", "matchesRow": "DATA-08" }
+    ]
+  },
+  {
+    "id": "UP-02",
+    "kind": "台账",
+    "filename": "便民服务办件台账（摘录）.xlsx",
+    "title": "便民服务办件台账（摘录）",
+    "docNo": null,
+    "docNoStatus": "待核",
+    "summary": "摘录云桥街道咨询引导专窗接待量，原文未标注文号。",
+    "body": [
+      { "anchor": "t1", "text": "云桥街道增设咨询引导专窗，本月接待 12 人次。台账未注明文号。" }
+    ],
+    "indicators": [
+      { "id": "UP-02-A", "name": "咨询接待量", "street": "云桥街道", "period": "2026-10", "value": 12, "unit": "", "unitStatus": "待核", "position": "表体第 1 行", "anchor": "t1", "matchesRow": "DATA-X01" }
+    ]
+  }
+]

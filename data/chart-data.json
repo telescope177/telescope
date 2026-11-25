@@ -1,0 +1,27 @@
+{
+  "unit": "件",
+  "metric": "便民服务办结件数",
+  "source": "街道便民服务办件台账",
+  "periodStart": "2026-07",
+  "periodEnd": "2026-10",
+  "streets": ["两江街道", "云桥街道"],
+  "acceptance": {
+    "period": "2026-10",
+    "rows": [
+      { "street": "两江街道", "value": 296, "rowId": "DATA-04" },
+      { "street": "云桥街道", "value": 234, "rowId": "DATA-08" }
+    ],
+    "total": 530
+  },
+  "rows": [
+    { "id": "DATA-01", "street": "两江街道", "period": "2026-07", "value": 210, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-02", "street": "两江街道", "period": "2026-08", "value": 248, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-03", "street": "两江街道", "period": "2026-09", "value": 271, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-04", "street": "两江街道", "period": "2026-10", "value": 296, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-05", "street": "云桥街道", "period": "2026-07", "value": 188, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-06", "street": "云桥街道", "period": "2026-08", "value": 205, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-07", "street": "云桥街道", "period": "2026-09", "value": 221, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-08", "street": "云桥街道", "period": "2026-10", "value": 234, "unit": "件", "source": "台账导入", "includeInChart": true },
+    { "id": "DATA-X01", "street": "云桥街道", "period": "2026-10", "value": 12, "unit": "", "source": "手工摘录", "includeInChart": false, "unitStatus": "待补充" }
+  ]
+}

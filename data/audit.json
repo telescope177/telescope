@@ -1,0 +1,93 @@
+[
+  {
+    "at": "2026-11-25T11:29:24.805Z",
+    "username": "sysadmin",
+    "role": "系统管理员",
+    "event": "登录",
+    "detail": "sysadmin"
+  },
+  {
+    "at": "2026-11-25T11:29:24.815Z",
+    "username": "secadmin",
+    "role": "安全保密管理员",
+    "event": "登录",
+    "detail": "secadmin"
+  },
+  {
+    "at": "2026-11-25T11:29:24.822Z",
+    "username": "auditor",
+    "role": "安全审计员",
+    "event": "登录",
+    "detail": "auditor"
+  },
+  {
+    "at": "2026-11-25T11:29:24.830Z",
+    "username": "admin",
+    "role": "管理员",
+    "event": "登录",
+    "detail": "admin"
+  },
+  {
+    "at": "2026-11-25T11:29:24.838Z",
+    "username": "user",
+    "role": "用户",
+    "event": "登录",
+    "detail": "user"
+  },
+  {
+    "at": "2026-11-25T11:29:24.846Z",
+    "username": "sysadmin",
+    "role": "系统管理员",
+    "event": "登录",
+    "detail": "sysadmin"
+  },
+  {
+    "at": "2026-11-25T11:29:24.856Z",
+    "username": "user",
+    "role": "用户",
+    "event": "登录",
+    "detail": "user"
+  },
+  {
+    "at": "2026-11-25T11:59:40.417Z",
+    "username": "sysadmin",
+    "role": "系统管理员",
+    "event": "登录",
+    "detail": "sysadmin"
+  },
+  {
+    "at": "2026-11-25T11:59:49.172Z",
+    "username": "secadmin",
+    "role": "安全保密管理员",
+    "event": "登录",
+    "detail": "secadmin"
+  },
+  {
+    "at": "2026-11-25T11:59:58.876Z",
+    "username": "auditor",
+    "role": "安全审计员",
+    "event": "登录",
+    "detail": "auditor"
+  },
+  {
+    "at": "2026-11-25T12:00:03.165Z",
+    "username": "sysadmin",
+    "role": "系统管理员",
+    "event": "登录",
+    "detail": "sysadmin"
+  },
+  {
+    "at": "2026-11-25T12:00:09.612Z",
+    "username": "admin",
+    "role": "管理员",
+    "event": "登录",
+    "detail": "admin"
+  },
+  {
+    "at": "2026-11-25T12:00:29.509Z",
+    "username": "admin",
+    "role": "管理员",
+    "event": "登录",
+    "detail": "admin"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "管理员": ["intake", "archive", "search", "draft", "review", "analysis", "consult", "consultSave", "siteRemove"],
+  "主管": ["search", "draft", "review", "analysis", "consult"],
+  "用户": ["search", "draft", "analysis", "consult"]
+}

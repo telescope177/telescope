@@ -1,0 +1,6 @@
+[
+  { "id": "OA-001", "node": "处室审核", "draftId": "DRAFT-01", "version": "v1", "role": "审核员", "initialStatus": "待审核", "hint": "审核节点首次检查，展示 4 条复核问题" },
+  { "id": "OA-002", "node": "重复提交", "draftId": "DRAFT-01", "version": "v1", "role": "审核员", "initialStatus": "待复用", "hint": "同一稿件、同一版本再次提交，复用已有检查结果" },
+  { "id": "OA-003", "node": "人工复核", "draftId": "DRAFT-01", "version": "v1", "role": "审核员", "initialStatus": "待复核", "hint": "退回后历史检查结果仍然保留" },
+  { "id": "OA-004", "node": "人工复核", "draftId": "DRAFT-01", "version": "v2", "role": "审核员", "initialStatus": "待人工复核", "hint": "新版本独立计算，历史结果 0 条" }
+]
